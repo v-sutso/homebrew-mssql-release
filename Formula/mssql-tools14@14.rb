@@ -1,4 +1,4 @@
-class MssqlToolsAT14 < Formula
+class MssqlTools14AT14 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url "https://go.microsoft.com/fwlink/?linkid=848963"
