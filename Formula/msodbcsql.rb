@@ -54,6 +54,7 @@ class Msodbcsql < Formula
       return false
     end
 
+    puts "Prefix = #{prefix.to_s}"
     if File.exists?("include/msodbcsql.h")
       puts "msodbcsql.h exists"
       d = Time.now.to_s
