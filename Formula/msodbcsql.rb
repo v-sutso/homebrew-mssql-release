@@ -54,6 +54,14 @@ class Msodbcsql < Formula
       return false
     end
 
+    if exists?("include/msodbcsql.h")
+      puts "msodbcsql.h exists"
+    end
+
+
+
+    
+
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql/resources/en_US/msodbcsqlr17.rll"
     chmod 0644, "include/msodbcsql.h"
