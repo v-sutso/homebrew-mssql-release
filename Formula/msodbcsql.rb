@@ -54,7 +54,7 @@ class Msodbcsql < Formula
       return false
     end
 
-    if File.exists?("include/msodbcsql.h") == true
+    if File.exists?("include/msodbcsql.h")
       puts "msodbcsql.h exists"
       d = Time.now.to_s
       d = DateTime.parse(d).strftime("%Y-%m-%d_%H-%M-%S")
