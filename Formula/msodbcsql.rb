@@ -54,7 +54,7 @@ class Msodbcsql < Formula
       return false
     end
 
-    if exists?("include/msodbcsql.h")
+    if File.exists?("include/msodbcsql.h") == true
       puts "msodbcsql.h exists"
     end
 
