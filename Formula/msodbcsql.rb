@@ -55,7 +55,7 @@ class Msodbcsql < Formula
     end
 
     puts "Prefix = #{prefix.to_s}"
-    if File.symlink?("/usr/local/include/msodbcsql.h")
+    if File.symlink?('/usr/local/include/msodbcsql.h')
       puts "msodbcsql.h exists"
       curTime = Time.now.to_s
       curTime = DateTime.parse(curTime).strftime("%Y-%m-%d_%H-%M-%S")
