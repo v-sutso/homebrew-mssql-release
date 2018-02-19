@@ -56,7 +56,7 @@ class Msodbcsql < Formula
 
     if File.exists?("include/msodbcsql.h") == true
       puts "msodbcsql.h exists"
-      d = DateTime.now
+      d = Time.now.to_s
       d = DateTime.parse(d).strftime("%Y-%m-%d_%H-%M-%S")
       oldFileName = "include/msodbcsql.h"
       newFileName = "include/msodbcsql.h." + d
