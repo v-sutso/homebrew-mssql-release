@@ -55,10 +55,10 @@ class Msodbcsql < Formula
     end
 
     puts "Prefix = #{prefix.to_s}"
-    if File.exists?("include/msodbcsql.h")
+    if File.exists?("/usr/local/include/msodbcsql.h")
       puts "msodbcsql.h exists"
-      d = Time.now.to_s
-      d = DateTime.parse(d).strftime("%Y-%m-%d_%H-%M-%S")
+      curTime = Time.now.to_s
+      curTime = DateTime.parse(curTime).strftime("%Y-%m-%d_%H-%M-%S")
       oldFileName = "include/msodbcsql.h"
       newFileName = "include/msodbcsql.h." + d
       puts "New file name is #{newFileName}"
