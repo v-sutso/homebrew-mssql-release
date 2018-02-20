@@ -21,7 +21,7 @@ class Msodbcsql < Formula
   link_overwrite "/usr/local/include/msodbcsql.h"    
 
   def check_eula_acceptance
-  55  if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
+    if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
       puts "The license terms for this product can be downloaded from"
       puts "https://aka.ms/odbc170eula and found in"
       puts "/usr/local/share/doc/msodbcsql/LICENSE.txt . By entering 'YES',"
