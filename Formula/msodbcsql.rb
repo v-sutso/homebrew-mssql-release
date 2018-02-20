@@ -61,7 +61,7 @@ class Msodbcsql < Formula
       curTime = Time.now.to_s
       curTime = DateTime.parse(curTime).strftime("%Y-%m-%d_%H-%M-%S")
       oldFileName = "include/msodbcsql.h"
-      newFileName = "include/msodbcsql.h." + d
+      newFileName = "include/msodbcsql.h." + curTime
       puts "New file name is #{newFileName}"
       File.rename(oldFileName,newFileName) 
     end
