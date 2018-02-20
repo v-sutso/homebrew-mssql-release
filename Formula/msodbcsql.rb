@@ -81,7 +81,7 @@ class Msodbcsql < Formula
     rm_rf "/usr/local/include/msodbcsql.h"
     #(prefix).install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"     
     #(prefix/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
-    (prefix.to_s/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
+    (prefix/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
 
 
     cp_r ".", "#{prefix}"
