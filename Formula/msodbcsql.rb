@@ -60,8 +60,8 @@ class Msodbcsql < Formula
       puts "msodbcsql.h exists"
       curTime = Time.now.to_s
       curTime = DateTime.parse(curTime).strftime("%Y-%m-%d_%H-%M-%S")
-      oldFileName = "include/msodbcsql.h"
-      newFileName = "include/msodbcsql.h." + curTime
+      oldFileName = "/usr/local/include/msodbcsql.h"
+      newFileName = "/usr/local/include/msodbcsql.h." + curTime
       puts "New file name is #{newFileName}"
       File.rename(oldFileName,newFileName) 
     end
