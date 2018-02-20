@@ -18,7 +18,7 @@ class Msodbcsql < Formula
 
   depends_on "unixodbc"
   depends_on "openssl"
-  link_overwrite "include/msodbcsql.h", "
+  link_overwrite "/usr/local/include/msodbcsql.h","include/msodbcsql.h "
   
   def check_eula_acceptance
     if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
