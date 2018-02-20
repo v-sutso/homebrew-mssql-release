@@ -75,6 +75,8 @@ class Msodbcsql < Formula
     chmod 0644, "share/doc/msodbcsql/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql/RELEASE_NOTES"
 
+    bin.install_symlink "#{prefix.to_s}/include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"
+
     cp_r ".", "#{prefix}"
 
     if !build.without? "registration"
