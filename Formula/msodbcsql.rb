@@ -78,7 +78,7 @@ class Msodbcsql < Formula
     # bin.install_symlink "#{prefix.to_s}/include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"
     # chmod 0755, "/usr/local/include/msodbcsql.h"
     # bin.install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"
-    rm -f "/usr/local/include/msodbcsql.h"
+    rm_rf "/usr/local/include/msodbcsql.h"
     (prefix).install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"     
 
     cp_r ".", "#{prefix}"
