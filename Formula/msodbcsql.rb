@@ -63,8 +63,8 @@ class Msodbcsql < Formula
       oldFileName = "/usr/local/include/msodbcsql.h"
       newFileName = "/usr/local/include/msodbcsql.h." + curTime
       puts "New file name is #{newFileName}"
-      #File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
-      File.rename(oldFileName,newFileName) 
+      File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
+      # File.rename(oldFileName,newFileName) 
     end
 
 
