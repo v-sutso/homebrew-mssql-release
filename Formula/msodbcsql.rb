@@ -18,7 +18,8 @@ class Msodbcsql < Formula
 
   depends_on "unixodbc"
   depends_on "openssl"
-
+  link_overwrite "include/msodbcsql.h", "
+  
   def check_eula_acceptance
     if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
       puts "The license terms for this product can be downloaded from"
@@ -55,7 +56,7 @@ class Msodbcsql < Formula
     end
 
     puts "Prefix = #{prefix.to_s}"
-    if File.symlinks?('/usr/local/include/msodbcsql.h')
+    if File.exist?('/usr/local/include/msodbcsql.h')
       puts "msodbcsql.h exists"
       curTime = Time.now.to_s
       curTime = DateTime.parse(curTime).strftime("%Y-%m-%d_%H-%M-%S")
