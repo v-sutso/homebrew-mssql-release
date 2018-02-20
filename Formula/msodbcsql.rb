@@ -76,8 +76,9 @@ class Msodbcsql < Formula
     chmod 0644, "share/doc/msodbcsql/RELEASE_NOTES"
 
     # bin.install_symlink "#{prefix.to_s}/include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"
-    #chmod 0755, "/usr/local/include/msodbcsql.h"
-    bin.install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"    
+    # chmod 0755, "/usr/local/include/msodbcsql.h"
+    # bin.install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"
+    (prefix).install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"     
 
     cp_r ".", "#{prefix}"
 
