@@ -18,10 +18,9 @@ class Msodbcsql < Formula
 
   depends_on "unixodbc"
   depends_on "openssl"
-  link_overwrite "/usr/local/include/msodbcsql.h","include/msodbcsql.h "
-  
+    
   def check_eula_acceptance
-    if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
+  55  if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
       puts "The license terms for this product can be downloaded from"
       puts "https://aka.ms/odbc170eula and found in"
       puts "/usr/local/share/doc/msodbcsql/LICENSE.txt . By entering 'YES',"
@@ -67,7 +66,7 @@ class Msodbcsql < Formula
       # File.rename(oldFileName,newFileName) 
     end
 
-
+    link_overwrite "/usr/local/include/msodbcsql.h"
 
     
 
