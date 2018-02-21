@@ -92,6 +92,10 @@ class Msodbcsql < Formula
    puts "Formula[msoqbcsql]: #{Formula["v-sutso/mssql-release/msodbcsql"].opt_bin}"
    puts "ENV.cc -MacOS.prefer_64_bit : #{ENV.cc} -m#{MacOS.prefer_64_bit? ? 64 :32}"
    puts "libexec: #{libexec}"
+   puts "Man: #{man}"
+   puts "Lib: #{lib}"
+   puts "Etc: #{etc}"
+   puts "Installed version: #{Formula["v-sutso/mssql-release/msodbcsql"].installed_version}"
 
 
 
