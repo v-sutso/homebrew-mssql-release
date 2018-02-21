@@ -84,6 +84,17 @@ class Msodbcsql < Formula
     (prefix/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
 
 
+#OFT
+   puts "Version: #{version}"
+   puts "Share: #{share}"
+   puts "Path: #{path}"
+   puts "Bin: #{bin}"
+   puts "Formula[msoqbcsql]: #{Formular["msodbcsql"].opt-bin}"
+
+
+
+#OFT
+
     cp_r ".", "#{prefix}"
 
     if !build.without? "registration"
