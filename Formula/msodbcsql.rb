@@ -20,6 +20,12 @@ class Msodbcsql < Formula
   depends_on "openssl"
   link_overwrite "/usr/local/include"    
 
+  resource "mssql-tools14" do
+    url "https://go.microsoft.com/fwlink/?linkid=848963"
+    sha256 "b31cfe98ff3c8f60a98fd02a1ebbe7cf7a2172320239adccd073ad3870786bf9"
+  end
+
+
   def check_eula_acceptance
     if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
       puts "The license terms for this product can be downloaded from"
@@ -102,8 +108,8 @@ class Msodbcsql < Formula
    puts "name: #{name}"   
    puts "info: #{info}"
    #puts "f: #{f}"
-
-
+ 
+   resources.each { |r| pkgshare.install r }
 #OFT
 
     cp_r ".", "#{prefix}"
