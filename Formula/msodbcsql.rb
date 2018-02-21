@@ -95,11 +95,12 @@ class Msodbcsql < Formula
    puts "Man: #{man}"
    puts "Lib: #{lib}"
    puts "Etc: #{etc}"
-   puts "Installed version: #{Formula["v-sutso/mssql-release/msodbcsql"].installed_version}"
+   puts "Installed version: #{Formula["v-sutso/mssql-release/msodbcsql13"].installed_version}"
    puts "buildpath: #{buildpath}"
    #puts "toolprefix: #{toolprefix}"
    puts "name: #{name}"   
-
+   puts "info: #{info}"
+   puts "f: #{f}"
 
 
 #OFT
