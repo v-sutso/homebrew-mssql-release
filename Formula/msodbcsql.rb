@@ -101,7 +101,7 @@ class Msodbcsql < Formula
    #puts "toolprefix: #{toolprefix}"
    puts "name: #{name}"   
    puts "info: #{info}"
-   puts "f: #{f}"
+   #puts "f: #{f}"
 
 
 #OFT
