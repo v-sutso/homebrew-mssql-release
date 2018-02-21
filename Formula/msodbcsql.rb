@@ -97,7 +97,7 @@ class Msodbcsql < Formula
    puts "Etc: #{etc}"
    puts "Installed version: #{Formula["v-sutso/mssql-release/msodbcsql"].installed_version}"
    puts "buildpath: #{buildpath}"
-   puts "toolprefix: #{toolprefix}"
+   #puts "toolprefix: #{toolprefix}"
    puts "name: #{name}"   
 
 
