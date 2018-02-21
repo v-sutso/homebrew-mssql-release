@@ -89,7 +89,7 @@ class Msodbcsql < Formula
    puts "Share: #{share}"
    puts "Path: #{path}"
    puts "Bin: #{bin}"
-   puts "Formula[msoqbcsql]: #{Formula["msodbcsql"].opt-bin}"
+   puts "Formula[msoqbcsql]: #{Formula["v-sutso/mssql-release/msodbcsql"].opt-bin}"
 
 
 
