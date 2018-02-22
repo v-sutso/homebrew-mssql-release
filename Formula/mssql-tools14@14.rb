@@ -7,7 +7,7 @@ class MssqlTools14AT14 < Formula
 
   depends_on "unixodbc"
   depends_on "openssl"
-  depends_on "msodbcsql@13.1"
+  depends_on "msodbcsql13@13.1"
 
   def check_eula_acceptance
     if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
