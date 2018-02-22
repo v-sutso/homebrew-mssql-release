@@ -138,7 +138,7 @@ class Msodbcsql < Formula
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
 
-   puts "Dir["Doc/*.html"]: #{Dir["Doc/*.html"]}"
+   puts "Dir["Doc"]: #{Dir["Doc"]}"
 
 
     # Do not version installation directories.
