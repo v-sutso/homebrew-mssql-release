@@ -142,7 +142,7 @@ class Msodbcsql < Formula
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
 
-    File.open("Makefile", "r") fo |file|
+    File.open("Makefile", "r") do |file|
       while line = file.gets
         puts line
       end
