@@ -88,8 +88,8 @@ class Msodbcsql < Formula
     #(prefix).install_symlink "include/msodbcsql.h" => "/usr/local/include/msodbcsql.h"     
     #(prefix/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
     (prefix/"include").install_symlink "msodbcsql.h" => "/usr/local/include/msodbcsql.h"
-    (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "/usr/local/share/doc/msodbcsql/LICENSE.txt"
-    (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "/usr/local/share/doc/msodbcsql/RELEASE_NOTES"
+    # (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "/usr/local/share/doc/msodbcsql/LICENSE.txt"
+    # (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "/usr/local/share/doc/msodbcsql/RELEASE_NOTES"
 
 #OFT
    puts "Version: #{version}"
