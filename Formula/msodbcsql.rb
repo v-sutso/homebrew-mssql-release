@@ -137,6 +137,11 @@ class Msodbcsql < Formula
 
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
+   puts "libdir: $(libdir)" 
+   puts "tzsh: $(tzsh)"  
+   puts "VERSION: $(VERSION)"
+
+
 
    puts "Dir[]: #{Dir["Doc"]}"
 
@@ -144,6 +149,9 @@ class Msodbcsql < Formula
     # Do not version installation directories.
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
+
+
+    puts "Makefile: $(Makefile)"
 
     File.open("Makefile", "r") do |file|
       while line = file.gets
