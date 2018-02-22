@@ -24,6 +24,11 @@ class Msodbcsql < Formula
     url "https://go.microsoft.com/fwlink/?linkid=848963"
     sha256 "b31cfe98ff3c8f60a98fd02a1ebbe7cf7a2172320239adccd073ad3870786bf9"
   end
+  resource "htmldoc" do
+    url "https://downloads.sourceforge.net/project/zsh/zsh-doc/5.4.2/zsh-5.4.2-doc.tar.xz"
+    mirror "https://www.zsh.org/pub/zsh-5.4.2-doc.tar.xz"
+    sha256 "5229cc93ebe637a07deb5b386b705c37a50f4adfef788b3c0f6647741df4f6bd"
+  end
 
 
   def check_eula_acceptance
@@ -60,6 +65,22 @@ class Msodbcsql < Formula
     if !check_eula_acceptance
       return false
     end
+
+
+    args = %W[
+      --prefix=#{prefix}
+      --enable-fndir=#{pkgshare}/functions
+      --enable-scriptdir=#{pkgshare}/scripts
+      --enable-site-fndir=#{HOMEBREW_PREFIX}/share/zsh/site-functions
+      --enable-site-scriptdir=#{HOMEBREW_PREFIX}/share/zsh/site-scripts
+      --enable-runhelpdir=#{pkgshare}/help
+      --enable-cap
+      --enable-maildir-support
+      --enable-multibyte
+      --enable-zsh-secure-free
+      --with-tcsetpgrp
+    ]
+    puts "args = #{arg}"
 
     puts "Prefix = #{prefix.to_s}"
     if File.exist?("/usr/local/include/msodbcsql.h")
@@ -113,6 +134,22 @@ class Msodbcsql < Formula
    #puts "toolprefix: #{toolprefix}"
    puts "name: #{name}"   
    puts "info: #{info}"
+
+   puts "pkgshare: #{pkgshare}"
+   puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
+
+    # Do not version installation directories.
+    inreplace ["Makefile", "Src/Makefile"],
+      "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
+
+    File.open("Makefile", "r") fo |file|
+      while line = file.gets
+        puts line
+      end
+    end
+
+
+
    #puts "f: #{f}"
  
    resources.each { |r| pkgshare.install r }
