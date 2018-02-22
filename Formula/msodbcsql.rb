@@ -137,9 +137,9 @@ class Msodbcsql < Formula
 
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
-   puts "libdir: #{$(libdir)}" 
-   puts "tzsh: #{$(tzsh)}"  
-   puts "VERSION: #{$(VERSION)}"
+   puts "libdir: #{libdir}" 
+   puts "tzsh: #{tzsh}"  
+   puts "VERSION: #{VERSION}"
 
 
 
