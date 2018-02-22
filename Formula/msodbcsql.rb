@@ -104,6 +104,11 @@ class Msodbcsql < Formula
    puts "Etc: #{etc}"
    #puts "Installed version: #{Formula["v-sutso/mssql-release/msodbcsql13"].installed_version}"
    puts "Installed version: #{Formula["msodbcsql13@13.1"].installed_version}"
+   if Formula["msodbcsql13@13.1"].installed?
+     puts "Formula["msodbcsql13@13.1"].installed = #{Formula["msodbcsql13@13.1"].installed?}"
+     depends_on "mssql-tools@14@14"
+   
+
    puts "buildpath: #{buildpath}"
    #puts "toolprefix: #{toolprefix}"
    puts "name: #{name}"   
