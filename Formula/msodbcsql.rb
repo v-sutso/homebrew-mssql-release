@@ -137,22 +137,22 @@ class Msodbcsql < Formula
 
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
-   puts "libdir: $(libdir)" 
-   puts "tzsh: $(tzsh)"  
-   puts "VERSION: $(VERSION)"
+   puts "libdir: #{$(libdir)}" 
+   puts "tzsh: #{$(tzsh)}"  
+   puts "VERSION: #{$(VERSION)}"
 
 
 
-   puts "Dir[]: #{Dir["Doc"]}"
+   #puts "Dir[]: #{Dir["Doc"]}"
 
 
     # Do not version installation directories.
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
-
-
     puts "Makefile: $(Makefile)"
 
+
+    puts "Dir[]: #{Dir["Doc"]}"
     File.open("Makefile", "r") do |file|
       while line = file.gets
         puts line
