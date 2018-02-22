@@ -127,7 +127,7 @@ class Msodbcsql < Formula
    puts "Installed version: #{Formula["msodbcsql13@13.1"].installed_version}"
    if Formula["msodbcsql13@13.1"].installed?
      puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-     depends_on "mssql-tools@14@14"
+     #depends_on "mssql-tools@14@14"
    end   
 
    puts "buildpath: #{buildpath}"
@@ -137,6 +137,9 @@ class Msodbcsql < Formula
 
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
+
+   puts "Dir["Doc/*.html"]: #{Dir["Doc/*.html"]}"
+
 
     # Do not version installation directories.
     inreplace ["Makefile", "Src/Makefile"],
