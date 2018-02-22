@@ -80,7 +80,7 @@ class Msodbcsql < Formula
       --enable-zsh-secure-free
       --with-tcsetpgrp
     ]
-    puts "args = #{arg}"
+    puts "args = #{args}"
 
     puts "Prefix = #{prefix.to_s}"
     if File.exist?("/usr/local/include/msodbcsql.h")
