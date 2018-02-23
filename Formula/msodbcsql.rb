@@ -147,7 +147,12 @@ class Msodbcsql < Formula
     # Do not version installation directories.
     out_file = File.new("Makefile", "w")
     out_file.close
-    inreplace ["Makefile", "Src/Makefile"],
+
+    out_file1 = File.new("Makefile1", "w")
+    out_file1.close
+
+
+    inreplace ["Makefile", "Makefile1"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
     puts "Makefile: $(Makefile)"
 
