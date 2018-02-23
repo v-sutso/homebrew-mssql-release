@@ -21,7 +21,7 @@ class Msodbcsql < Formula
 
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    depends_on "mssql-tools@14@14"
+    depends_on "mssql-tools@14"
   end 
   link_overwrite "/usr/local/include"    
 
