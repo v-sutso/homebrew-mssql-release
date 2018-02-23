@@ -137,16 +137,16 @@ class Msodbcsql < Formula
 
    puts "pkgshare: #{pkgshare}"
    puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
-   puts "libdir: $(libdir).to_s" 
-   puts "tzsh: $(tzsh).to_s"  
-   puts "VERSION: $(VERSION).to_s"
-
-
+   # puts "libdir: $(libdir).to_s" 
+   # puts "tzsh: $(tzsh).to_s"  
+   # puts "VERSION: $(VERSION).to_s"
 
    #puts "Dir[]: #{Dir["Doc"]}"
 
 
     # Do not version installation directories.
+    out_file = File.new("Makefile", "w")
+    out_file.close
     inreplace ["Makefile", "Src/Makefile"],
       "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
     puts "Makefile: $(Makefile)"
