@@ -18,6 +18,11 @@ class Msodbcsql < Formula
 
   depends_on "unixodbc"
   depends_on "openssl"
+
+  if Formula["msodbcsql13@13.1"].installed?
+    #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
+    depends_on "mssql-tools@14@14"
+  end 
   link_overwrite "/usr/local/include"    
 
   resource "mssql-tools14" do
