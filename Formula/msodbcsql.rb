@@ -21,7 +21,7 @@ class Msodbcsql < Formula
 
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    depends_on "mssql-tools@13" => "ACCEPT_EULA=Y"
+    depends_on "mssql-tools@13" => ENV["ACCEPT_EULA=Y"]
   end 
   link_overwrite "/usr/local/include"    
 
@@ -87,6 +87,7 @@ class Msodbcsql < Formula
     ]
     puts "args = #{args}"
 
+dbcusers-Mac:localTap bamboo$ brew remove mssql-tools14@14
     puts "Prefix = #{prefix.to_s}"
     if File.exist?("/usr/local/include/msodbcsql.h")
       puts "msodbcsql.h exists"
