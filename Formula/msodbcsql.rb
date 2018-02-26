@@ -21,7 +21,7 @@ class Msodbcsql < Formula
 
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    depends_on "mssql-tools@13"
+    depends_on "mssql-tools@13" => "ACCEPT_EULA=Y"
   end 
   link_overwrite "/usr/local/include"    
 
@@ -157,9 +157,9 @@ class Msodbcsql < Formula
     out_file1.close
 
 
-    inreplace ["Makefile", "Makefile1"],
-      "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
-    puts "Makefile: $(Makefile)"
+    #inreplace ["Makefile", "Makefile1"],
+    #  "$(libdir)/$(tzsh)/$(VERSION)", "$(libdir)"
+    #puts "Makefile: $(Makefile)"
 
 
     puts "Dir[]: #{Dir["Doc"]}"
