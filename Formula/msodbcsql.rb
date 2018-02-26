@@ -19,7 +19,7 @@ class Msodbcsql < Formula
   depends_on "unixodbc"
   depends_on "openssl"
 
-  attr_rw :a
+  attr_accessor :a
   @a ="n"
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
@@ -60,7 +60,7 @@ class Msodbcsql < Formula
             puts "Please enter YES or NO"
           end  
         else
-          puts "Installation terminated: Could not prompt for license acceptance."
+        f Formula["msodbcsql13@13.1"].installed?  puts "Installation terminated: Could not prompt for license acceptance."
           puts "If you are performing an unattended installation, you may set"
           puts "ACCEPT_EULA to Y to indicate your acceptance of the license terms."
           return false
@@ -148,7 +148,7 @@ class Msodbcsql < Formula
    puts "info: #{info}"
 
    puts "pkgshare: #{pkgshare}"
-   pf Formula["msodbcsql13@13.1"].installed?uts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
+   puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
    # puts "libdir: $(libdir).to_s" 
    # puts "tzsh: $(tzsh).to_s"  
    # puts "VERSION: $(VERSION).to_s"
