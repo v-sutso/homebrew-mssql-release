@@ -19,15 +19,9 @@ class Msodbcsql < Formula
   depends_on "unixodbc"
   depends_on "openssl"
 
-  attr_accessor :a
-  def a
-    @a
-  end
-  def a=(x)
-    @a =x
-  end
-
-
+  #attr_accessor :a
+  @@a="n"
+  
 
   @a ="n"
   if Formula["msodbcsql13@13.1"].installed?
@@ -133,7 +127,9 @@ class Msodbcsql < Formula
 
 #OFT
    
-   puts "a: #{a}"
+   #puts "a: #{a}"
+   
+   puts @@a
    puts "Version: #{version}"
    puts "Share: #{share}"
    puts "Path: #{path}"
