@@ -130,7 +130,7 @@ class Msodbcsql < Formula
    #puts "a: #{a}"
    
    puts @@a
-   puts "var :" +var
+   puts "var : #{var}"
    puts "Version: #{version}"
    puts "Share: #{share}"
    puts "Path: #{path}"
