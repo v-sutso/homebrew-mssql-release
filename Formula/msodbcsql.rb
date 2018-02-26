@@ -19,10 +19,12 @@ class Msodbcsql < Formula
   depends_on "unixodbc"
   depends_on "openssl"
 
+  a="n"
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    ENV["ACCEPT_EULA"] = "Y"
     depends_on "mssql-tools@13" => "ACCEPT_EULA=Y"
+
+    a = "y"
   end 
   link_overwrite "/usr/local/include"    
 
