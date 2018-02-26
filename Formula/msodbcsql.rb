@@ -20,6 +20,7 @@ class Msodbcsql < Formula
   depends_on "openssl"
 
   attr_accessor :var
+  
   @@a="n"
   @var="no"
 
@@ -130,7 +131,7 @@ class Msodbcsql < Formula
    #puts "a: #{a}"
    
    puts @@a
-   puts "var : #{var.to_s}" 
+   puts "var : " +var.to_s 
    
    puts "Version: #{version}"
    puts "Share: #{share}"
