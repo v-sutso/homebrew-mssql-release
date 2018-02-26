@@ -19,7 +19,7 @@ class Msodbcsql < Formula
   depends_on "unixodbc"
   depends_on "openssl"
 
-  attr_reader :a
+  attr_rw :a
   @a ="n"
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
@@ -148,7 +148,7 @@ class Msodbcsql < Formula
    puts "info: #{info}"
 
    puts "pkgshare: #{pkgshare}"
-   puts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
+   pf Formula["msodbcsql13@13.1"].installed?uts "HOMEBREW_PREFIX: #{HOMEBREW_PREFIX}"
    # puts "libdir: $(libdir).to_s" 
    # puts "tzsh: $(tzsh).to_s"  
    # puts "VERSION: $(VERSION).to_s"
