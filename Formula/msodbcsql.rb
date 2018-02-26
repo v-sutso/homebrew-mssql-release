@@ -122,6 +122,8 @@ class Msodbcsql < Formula
     # (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "/usr/local/share/doc/msodbcsql/RELEASE_NOTES"
 
 #OFT
+   
+   puts "a: #{a}"
    puts "Version: #{version}"
    puts "Share: #{share}"
    puts "Path: #{path}"
