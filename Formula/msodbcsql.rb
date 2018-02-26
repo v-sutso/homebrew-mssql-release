@@ -23,12 +23,11 @@ class Msodbcsql < Formula
   @@a="n"
   
 
-  @a ="n"
+  
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
     depends_on "mssql-tools@13" => "ACCEPT_EULA=Y"
-
-    @a = "y"
+    @@a = "y"
   end 
   link_overwrite "/usr/local/include"    
 
