@@ -23,6 +23,11 @@ class Msodbcsql < Formula
   def a
     @a
   end
+  def a=(x)
+    @a =x
+  end
+
+
 
   @a ="n"
   if Formula["msodbcsql13@13.1"].installed?
