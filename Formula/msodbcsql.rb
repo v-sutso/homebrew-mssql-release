@@ -90,7 +90,7 @@ class Msodbcsql < Formula
     ]
     puts "args = #{args}"
 
-dbcusers-Mac:localTap bamboo$ brew remove mssql-tools14@14
+
     puts "Prefix = #{prefix.to_s}"
     if File.exist?("/usr/local/include/msodbcsql.h")
       puts "msodbcsql.h exists"
