@@ -62,7 +62,7 @@ ENV["ACCEPT_EULA"]=Y
             return false
           else
             puts "Please enter YES or NO"
-          end  ENV["ACCEPT_EULA"]=Y
+          end
         else
         f Formula["msodbcsql13@13.1"].installed?  puts "Installation terminated: Could not prompt for license acceptance."
           puts "If you are performing an unattended installation, you may set"
