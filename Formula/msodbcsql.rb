@@ -27,7 +27,7 @@ ENV["ACCEPT_EULA"]=Y
   
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    depends_on "mssql-tools@13" => 'ENV["ACCEPT_EULA"]=Y'
+    depends_on "mssql-tools@13" => "ENV[ACCEPT_EULA]=Y"
     @@a = "y"
     @var ="yes"
   end 
@@ -76,9 +76,9 @@ ENV["ACCEPT_EULA"]=Y
 
   def install
 
-    #if build.with? 'ENV["ACCEPT_EULA"]=Y'
-      #puts 'ENV["ACCEPT_EULA"]=Y'
-    #end
+    if build.with? "ENV[ACCEPT_EULA]=Y"
+      puts 'ENV["ACCEPT_EULA"]=Y'
+    end
 
     if !check_eula_acceptance
       return false
