@@ -27,8 +27,8 @@ class Msodbcsql < Formula
   
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    #depends_on "mssql-tools@13" => [:option, "with-ENV[ACCEPT_EULA]=Y"]
-    depends_on "mssql-tools@13" => [:option, "ACCEPT_EULA=Y"]
+    depends_on "mssql-tools@13" => [:option, "with-ENV[ACCEPT_EULA]=Y"]
+    #depends_on "mssql-tools@13" => [:option, "with-ACCEPT_EULA=Y"]
     @@a = "y"
     @var ="yes"
   end 
@@ -77,7 +77,7 @@ class Msodbcsql < Formula
 
   def install
 
-    puts "\n\nEntering def install\n"
+    puts "\n\nEntering def install\n\n\n"
 
     if build.with? "ENV[ACCEPT_EULA]=Y"
       puts "ENV[ACCEPT_EULA]=Y --- 1"
