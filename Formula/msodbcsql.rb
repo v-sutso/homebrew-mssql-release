@@ -77,7 +77,7 @@ ENV["ACCEPT_EULA"]=Y
   def install
 
     if build.with? 'ENV["ACCEPT_EULA"]=Y'
-      puts '"ENV["ACCEPT_EULA"]=Y'
+      puts 'ENV["ACCEPT_EULA"]=Y'
     end
 
     if !check_eula_acceptance
