@@ -23,7 +23,7 @@ class Msodbcsql < Formula
   
   @@a="n"
   @var="no"
-ENV["ACCEPT_EULA"]=Y
+
   
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
