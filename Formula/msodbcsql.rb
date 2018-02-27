@@ -27,7 +27,7 @@ class Msodbcsql < Formula
   
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
-    depends_on "mssql-tools@13" => "ACCEPT_EULA=Y"
+    depends_on "mssql-tools@13" => ENV["ACCEPT_EULA"]=Y
     @@a = "y"
     @var ="yes"
   end 
@@ -131,7 +131,7 @@ class Msodbcsql < Formula
    #puts "a: #{a}"
    
    puts @@a
-   puts "var : " +var.to_s 
+   puts "var :  #{@var}" 
    
    puts "Version: #{version}"
    puts "Share: #{share}"
