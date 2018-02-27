@@ -76,6 +76,8 @@ class Msodbcsql < Formula
 
   def install
 
+    puts " Entering def install"
+
     if build.with? "ENV[ACCEPT_EULA]=Y"
       puts "ENV[ACCEPT_EULA]=Y"
     end
