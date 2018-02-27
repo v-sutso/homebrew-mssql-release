@@ -23,7 +23,7 @@ class Msodbcsql < Formula
   
   @@a="n"
   @var="no"
-
+ENV["ACCEPT_EULA"]=Y
   
   if Formula["msodbcsql13@13.1"].installed?
     #puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
@@ -62,7 +62,7 @@ class Msodbcsql < Formula
             return false
           else
             puts "Please enter YES or NO"
-          end  
+          end  ENV["ACCEPT_EULA"]=Y
         else
         f Formula["msodbcsql13@13.1"].installed?  puts "Installation terminated: Could not prompt for license acceptance."
           puts "If you are performing an unattended installation, you may set"
@@ -75,6 +75,11 @@ class Msodbcsql < Formula
   end
 
   def install
+
+    if build.with? 'ENV["ACCEPT_EULA"]=Y'
+      puts '"ENV["ACCEPT_EULA"]=Y'
+    end
+
     if !check_eula_acceptance
       return false
     end
