@@ -1,4 +1,5 @@
 class Msodbcsql < Formula
+  # Before brew audit
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "https://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql-17.0.1.1.tar.gz"
@@ -161,6 +162,10 @@ class Msodbcsql < Formula
    puts "Installed version: #{Formula["msodbcsql13@13.1"].installed_version}"
    if Formula["msodbcsql13@13.1"].installed?
      puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
+     #depends_on "mssql-tools@14@14"
+   end   
+   if Formula["msodbcsql13"].installed?
+     puts "Formula[msodbcsql13].installed? = #{Formula["msodbcsql13"].installed?}"
      #depends_on "mssql-tools@14@14"
    end   
 
