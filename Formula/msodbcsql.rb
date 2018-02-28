@@ -164,8 +164,8 @@ class Msodbcsql < Formula
      puts "Formula[msodbcsql13@13.1].installed? = #{Formula["msodbcsql13@13.1"].installed?}"
      #depends_on "mssql-tools@14@14"
    end   
-   if Formula["msodbcsql13"].installed?
-     puts "Formula[msodbcsql13].installed? = #{Formula["msodbcsql13"].installed?}"
+   if Formula["mssql-tools14@14"].installed?
+     puts "Formula[mssql-tools14@14].installed? = #{Formula["mssql-tools14@14"].installed?}"
      #depends_on "mssql-tools@14@14"
    end   
 
