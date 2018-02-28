@@ -1,4 +1,4 @@
-class Msodbcsql < Formula
+class MsodbcsqlAT13192 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-13.1.9.2.tar.gz"
@@ -15,6 +15,8 @@ class Msodbcsql < Formula
         odbcinst -u -d -n "ODBC Driver 13 for SQL Server"
     EOS
   end
+
+  keg_only :versioned_formula
 
   depends_on "unixodbc"
   depends_on "openssl"

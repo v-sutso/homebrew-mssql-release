@@ -1,9 +1,9 @@
-class Msodbcsql < Formula
+class MsodbcsqlAT13170 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
-  url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-13.1.9.2.tar.gz"
-  version "13.1.9.2"
-  sha256 "06f4f45bbf16438d681227c6eeada89cbf03a78c61338bdc5eda51ab0e314e5d"
+  url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-13.1.7.0.tar.gz"
+  version "13.1.7.0"
+  sha256 "2f9dd8f3baeab18539ab35e2ec83a3d87a81a056244408edc242696f3314f566"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -15,6 +15,8 @@ class Msodbcsql < Formula
         odbcinst -u -d -n "ODBC Driver 13 for SQL Server"
     EOS
   end
+
+  keg_only :versioned_formula
 
   depends_on "unixodbc"
   depends_on "openssl"
@@ -59,7 +61,6 @@ class Msodbcsql < Formula
     chmod 0644, "include/msodbcsql.h"
     chmod 0644, "odbcinst.ini"
     chmod 0644, "share/doc/msodbcsql/LICENSE.txt"
-    chmod 0644, "share/doc/msodbcsql/RELEASE_NOTES"
 
     cp_r ".", "#{prefix}"
 
