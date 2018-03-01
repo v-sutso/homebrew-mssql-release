@@ -8,7 +8,7 @@ class Msodbcsql17 < Formula
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
-
+  conflicts_with "msodbcsql" because =>"msodbcsql symlinks msodbcsql.h"
   depends_on "unixodbc"
   depends_on "openssl"
 
@@ -45,7 +45,7 @@ class Msodbcsql17 < Formula
   def install
     return false unless check_eula_acceptance?
 
-    (prefix/"include").unlink
+    
 
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
