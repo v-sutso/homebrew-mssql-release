@@ -3,7 +3,7 @@ class Msodbcsql17AT17005 < Formula
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "ddc260d3348de40d898ff291ef7bd283a62309c4f7b2ae74c1917d468b8e41dc"
+  sha256 "5c2f1880dec6f3f3247c5b01d84f78657a6f61472b685c0bf391ff61f5583762"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -47,19 +47,21 @@ class Msodbcsql17AT17005 < Formula
     return false unless check_eula_acceptance?
 
     chmod 0444, "lib/libmsodbcsql.17.dylib"
-    chmod 0444, "share/msodbcsql/resources/en_US/msodbcsqlr17.rll"
+    chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
     chmod 0644, "include/msodbcsql.h"
     chmod 0644, "odbcinst.ini"
-    chmod 0644, "share/doc/msodbcsql/LICENSE.txt"
-    chmod 0644, "share/doc/msodbcsql/RELEASE_NOTES"
+    chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
+    chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
 
     (prefix/"include").install_symlink "msodbcsql.h" => "#{HOMEBREW_PREFIX}/include/msodbcsql.h"
-    (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/LICENSE.txt"
-    (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/RELEASE_NOTES"
+    if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
+      (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
+      (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
+    end
 
     cp_r ".", prefix.to_s
 
-    if !build.without? "registration"
+    if build.with? "registration"
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
