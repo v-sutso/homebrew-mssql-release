@@ -53,7 +53,7 @@ class Msodbcsql17 < Formula
     chmod 0644, "share/doc/msodbcsql/RELEASE_NOTES"
 
     (prefix/"include").install_symlink "msodbcsql.h" => "#{HOMEBREW_PREFIX}/include/msodbcsql.h"
-    if File.exists?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql/LICENSE.txt")
+    if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql")
       (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/LICENSE.txt"
     end
 
