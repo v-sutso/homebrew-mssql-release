@@ -3,7 +3,7 @@ class Msodbcsql17AT17005 < Formula
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "5c2f1880dec6f3f3247c5b01d84f78657a6f61472b685c0bf391ff61f5583762"
+  sha256 "0a37953d8a80df99aef3804e3e911de70b84b9fa76db1bd8f37f9406a882b225"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -53,7 +53,6 @@ class Msodbcsql17AT17005 < Formula
     chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
 
-    (prefix/"include").install_symlink "msodbcsql.h" => "#{HOMEBREW_PREFIX}/include/msodbcsql.h"
     if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
       (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
       (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
