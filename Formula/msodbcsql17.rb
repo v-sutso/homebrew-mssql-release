@@ -60,7 +60,7 @@ class Msodbcsql17 < Formula
 
     cp_r ".", prefix.to_s
 
-    if !build.without? "registration"
+    if build.with? "registration"
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
