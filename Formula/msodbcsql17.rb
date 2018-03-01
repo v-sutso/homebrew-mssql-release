@@ -54,7 +54,7 @@ class Msodbcsql17 < Formula
 
     (prefix/"include").install_symlink "msodbcsql.h" => "#{HOMEBREW_PREFIX}/include/msodbcsql.h"
     #(prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/LICENSE.txt"
-    #(prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/RELEASE_NOTES"
+    (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql/RELEASE_NOTES"
 
     cp_r ".", prefix.to_s
 
