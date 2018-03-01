@@ -45,6 +45,8 @@ class Msodbcsql17 < Formula
   def install
     return false unless check_eula_acceptance?
 
+    (prefix/"include").unlink
+
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
     chmod 0644, "include/msodbcsql.h"
