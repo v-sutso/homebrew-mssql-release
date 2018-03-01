@@ -8,7 +8,7 @@ class Msodbcsql17 < Formula
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
-  conflicts_with "msodbcsql", :because =>"msodbcsql symlinks msodbcsql.h"
+  #conflicts_with "msodbcsql", :because =>"msodbcsql symlinks msodbcsql.h"
   depends_on "unixodbc"
   depends_on "openssl"
 
