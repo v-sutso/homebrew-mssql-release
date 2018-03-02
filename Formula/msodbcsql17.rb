@@ -58,6 +58,9 @@ class Msodbcsql17 < Formula
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
+    export PATH=$PATH:{share}/msodbcsql17/resources/en_US
+
+
   end
 
   def caveats; <<-EOS.undent
