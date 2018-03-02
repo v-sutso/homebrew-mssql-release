@@ -45,9 +45,18 @@ class Msodbcsql17 < Formula
   def install
     return false unless check_eula_acceptance?
 
+    if File.exist?("/usr/local/include/msodbcsql.h")
+      puts "msodbcsql.h exists"
+      oldFileName = "/usr/local/include/msodbcsql.h"
+      newFileName = "/usr/local/include/msodbcsql.h.bak"
+      puts "New file name is #{newFileName}"
+      File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
+      File.rename(oldFileName,newFileName)
+    end
+
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
-    chmod 0444, "include/msodbcsql17/msodbcsql.h"
+    chmod 0644, "include/msodbcsql17/msodbcsql.h"
     chmod 0644, "odbcinst.ini"
     chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
@@ -63,6 +72,18 @@ class Msodbcsql17 < Formula
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
+  end
+
+  def post_install
+    if File.exist?("/usr/local/include/msodbcsql.h.bak")
+      puts "msodbcsql.h.bak exists"
+      oldFileName = "/usr/local/include/msodbcsql.h.bak"
+      newFileName = "/usr/local/include/msodbcsql.h"      
+      puts "New file name is #{newFileName}"
+      File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
+      File.rename(oldFileName,newFileName)
+    end
+
   end
 
   def caveats; <<-EOS.undent
