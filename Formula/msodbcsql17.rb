@@ -53,10 +53,10 @@ class Msodbcsql17 < Formula
     chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
 
-    if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
-      (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
-      (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
-    end
+    #if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
+    #  (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
+    #  (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
+    #end
 
     cp_r ".", prefix.to_s
 
