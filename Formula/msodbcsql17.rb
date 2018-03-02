@@ -4,7 +4,7 @@ class Msodbcsql17 < Formula
   # url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   url "file:///Users/bamboo/formula_1/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "fa20f657332147193af102ca2f239791c51609bba66934463a969472f50f973b"
+  sha256 "3c4fda33c13a874b1d06caa44abfb4291500ca934919b9d6b91a2ad62f51dd16"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -16,7 +16,7 @@ class Msodbcsql17 < Formula
     if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
       puts "https://aka.ms/odbc170eula and found in"
-      puts "/usr/local/share/doc/msodbcsql/LICENSE.txt . By entering 'YES',"
+      puts "/usr/local/share/doc/msodbcsql17/LICENSE.txt . By entering 'YES',"
       puts "you indicate that you accept the license terms."
       puts ""
       loop do
