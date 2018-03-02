@@ -3,8 +3,9 @@ class Msodbcsql17 < Formula
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   #url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   url "file:///Users/bamboo/formula_1/msodbcsql-17.0.0.5.tar.gz"
+
   version "17.0.0.5"
-  sha256 "294095fbdfe8e35c0fea5d6582ff161dfc7262e8157b57a650f16234bf3c9211"
+  sha256 "74638dbbb4e632cc5bc2d258877ec87e8af775f0e876456496ad924c5682b612"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -45,15 +46,6 @@ class Msodbcsql17 < Formula
   def install
     return false unless check_eula_acceptance?
 
-    if File.exist?("/usr/local/include/msodbcsql.h")
-      puts "msodbcsql.h exists"
-      oldFileName = "/usr/local/include/msodbcsql.h"
-      newFileName = "/usr/local/include/msodbcsql.h.bak"
-      puts "New file name is #{newFileName}"
-      File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
-      File.rename(oldFileName,newFileName)
-    end
-
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
     chmod 0644, "include/msodbcsql17/msodbcsql.h"
@@ -61,10 +53,10 @@ class Msodbcsql17 < Formula
     chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
 
-    #if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
-    #  (prefix/"share/doc/msodbcsql17").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
-    #  (prefix/"share/doc/msodbcsql17").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
-    #end
+    if File.directory?("#{HOMEBREW_PREFIX}/share/doc/msodbcsql17")
+      (prefix/"share/doc/msodbcsql").install_symlink "LICENSE.txt" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/LICENSE.txt"
+      (prefix/"share/doc/msodbcsql").install_symlink "RELEASE_NOTES" => "#{HOMEBREW_PREFIX}/share/doc/msodbcsql17/RELEASE_NOTES"
+    end
 
     cp_r ".", prefix.to_s
 
@@ -72,19 +64,6 @@ class Msodbcsql17 < Formula
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
-  end
-
-  def post_install
-    if File.exist?("/usr/local/include/msodbcsql.h.bak")
-      puts "msodbcsql.h.bak exists"
-      rm_rf "/usr/local/include/msodbcsql.h" 
-      oldFileName = "/usr/local/include/msodbcsql.h.bak"
-      newFileName = "/usr/local/include/msodbcsql.h"      
-      puts "New file name is #{newFileName}"
-      File.chmod(0777, "/usr/local/include/msodbcsql.h") rescue nil
-      File.rename(oldFileName,newFileName)
-    end
-
   end
 
   def caveats; <<-EOS.undent

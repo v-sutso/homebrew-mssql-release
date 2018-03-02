@@ -3,7 +3,7 @@ class Msodbcsql17AT17005 < Formula
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "294095fbdfe8e35c0fea5d6582ff161dfc7262e8157b57a650f16234bf3c9211"
+  sha256 "74638dbbb4e632cc5bc2d258877ec87e8af775f0e876456496ad924c5682b612"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
