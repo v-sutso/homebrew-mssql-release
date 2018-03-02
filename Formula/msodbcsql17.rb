@@ -77,6 +77,7 @@ class Msodbcsql17 < Formula
   def post_install
     if File.exist?("/usr/local/include/msodbcsql.h.bak")
       puts "msodbcsql.h.bak exists"
+      rm_rf "/usr/local/include/msodbcsql.h" 
       oldFileName = "/usr/local/include/msodbcsql.h.bak"
       newFileName = "/usr/local/include/msodbcsql.h"      
       puts "New file name is #{newFileName}"
