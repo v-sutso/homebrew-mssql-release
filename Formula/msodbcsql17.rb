@@ -4,7 +4,7 @@ class Msodbcsql17 < Formula
   #url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   url "file:///Users/bamboo/formula_1/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "bc36fb53395ccfdc15296fc857738f7d22505928cda92cb0260fb87421c3b67c"
+  sha256 "9bb922ef14e273678c277980c189e99cffc9e096fa33e5a186b452f4ed7bf902"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
