@@ -47,7 +47,7 @@ class Msodbcsql17 < Formula
 
     chmod 0444, "lib/libmsodbcsql.17.dylib"
     chmod 0444, "share/msodbcsql17/resources/en_US/msodbcsqlr17.rll"
-    chmod 0644, "include/msodbcsql17/msodbcsql.h"
+    chmod 0444, "include/msodbcsql17/msodbcsql.h"
     chmod 0644, "odbcinst.ini"
     chmod 0644, "share/doc/msodbcsql17/LICENSE.txt"
     chmod 0644, "share/doc/msodbcsql17/RELEASE_NOTES"
