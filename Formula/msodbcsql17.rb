@@ -1,10 +1,10 @@
 class Msodbcsql17 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
-  # url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
+  #url "http://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-17.0.0.5.tar.gz"
   url "file:///Users/bamboo/formula_1/msodbcsql-17.0.0.5.tar.gz"
   version "17.0.0.5"
-  sha256 "e7ac7a41dad6c89b0cc419a13a06ac3143398d6ea8233ad0c73865b6b948a07d"
+  sha256 "bc36fb53395ccfdc15296fc857738f7d22505928cda92cb0260fb87421c3b67c"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
@@ -58,9 +58,6 @@ class Msodbcsql17 < Formula
         system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 17 for SQL Server\""
         system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
-    export PATH=$PATH:{share}/msodbcsql17/resources/en_US
-
-
   end
 
   def caveats; <<-EOS.undent
