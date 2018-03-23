@@ -1,13 +1,13 @@
-class MssqlTools < Formula
+class MssqlToolsAT14060 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
-  url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-17.0.1.1.tar.gz"
-  version "17.0.1.1"
-  sha256 "61fe8c34e6695b04ac12008c697c888bf9a85dad5490d3cf8b535d358c258a5d"
+  url "https://go.microsoft.com/fwlink/?linkid=848963"
+  version "14.0.6.0"
+  sha256 "b31cfe98ff3c8f60a98fd02a1ebbe7cf7a2172320239adccd073ad3870786bf9"
 
   depends_on "unixodbc"
   depends_on "openssl"
-  depends_on "msodbcsql17"
+  depends_on "msodbcsql"
 
   def check_eula_acceptance?
     if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
@@ -20,8 +20,9 @@ class MssqlTools < Formula
         puts "Do you accept the license terms? (Enter YES or NO)"
         accept_eula = STDIN.gets.chomp
         if accept_eula
-          break if accept_eula.casecmp("YES").zero?
-          if accept_eula.upcase == "NO"
+          break if accept_eula == "YES"
+            break
+          elsif accept_eula == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
           else
@@ -40,8 +41,7 @@ class MssqlTools < Formula
 
   def install
     return false unless check_eula_acceptance?
-      return false
-    end
+
 
     chmod 0444, "bin/sqlcmd"
     chmod 0444, "bin/bcp"
@@ -59,11 +59,6 @@ class MssqlTools < Formula
     out = shell_output("#{bin}/sqlcmd -?")
     assert_match "Microsoft (R) SQL Server Command Line Tool", out
     out = shell_output("#{bin}/bcp -v")
-    assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out 
+    assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out
   end
-
-
-    
-
-  
 end

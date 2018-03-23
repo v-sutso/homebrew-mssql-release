@@ -1,4 +1,4 @@
-class MssqlTools < Formula
+class MssqlToolsAT17011 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-17.0.1.1.tar.gz"
@@ -20,7 +20,7 @@ class MssqlTools < Formula
         puts "Do you accept the license terms? (Enter YES or NO)"
         accept_eula = STDIN.gets.chomp
         if accept_eula
-          break if accept_eula.casecmp("YES").zero?
+          break if accept_eula.upcase == "YES"
           if accept_eula.upcase == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
@@ -40,8 +40,7 @@ class MssqlTools < Formula
 
   def install
     return false unless check_eula_acceptance?
-      return false
-    end
+
 
     chmod 0444, "bin/sqlcmd"
     chmod 0444, "bin/bcp"
@@ -52,18 +51,13 @@ class MssqlTools < Formula
     chmod 0644, "usr/share/doc/mssql-tools/LICENSE.txt"
     chmod 0644, "usr/share/doc/mssql-tools/THIRDPARTYNOTICES.txt"
 
-    cp_r ".", prefix.to_s
+    cp_r ".", "prefix.to_s"
   end
   
-  test do 
+  test do
     out = shell_output("#{bin}/sqlcmd -?")
     assert_match "Microsoft (R) SQL Server Command Line Tool", out
     out = shell_output("#{bin}/bcp -v")
     assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out 
   end
-
-
-    
-
-  
 end
