@@ -40,9 +40,7 @@ class MssqlTools < Formula
 
   def install
     return false unless check_eula_acceptance?
-      return false
-    end
-
+  
     chmod 0444, "bin/sqlcmd"
     chmod 0444, "bin/bcp"
     chmod 0444, "share/resources/en_US/BatchParserGrammar.dfa"
@@ -61,9 +59,4 @@ class MssqlTools < Formula
     out = shell_output("#{bin}/bcp -v")
     assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out 
   end
-
-
-    
-
-  
 end

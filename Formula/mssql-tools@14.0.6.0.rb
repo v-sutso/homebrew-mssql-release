@@ -21,8 +21,7 @@ class MssqlToolsAT14060 < Formula
         accept_eula = STDIN.gets.chomp
         if accept_eula
           break if accept_eula == "YES"
-            break
-          elsif accept_eula == "NO"
+          if accept_eula == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
           else
